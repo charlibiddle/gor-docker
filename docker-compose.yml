@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  gor:
+    privileged: true
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ulimits:
+      nofile:
+        soft: 98300
+        hard: 980300
+    volumes:
+      - ./data:/data
+      - ./middleware:/middleware
